@@ -1,7 +1,6 @@
 # ts-test2
 
-
-
+一个空白的脚手架，使用vue2 + typescript + composition api，希望之后可以顺畅地过渡到vue3
 
 
 ## Project setup
