@@ -1,18 +1,30 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div class="home">
+        <img alt="Vue logo" src="../assets/logo.png" />
+        {{ count }}
+        <v-btn @click="countAdd">test</v-btn>
+    </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { ref, defineComponent, Ref } from "@vue/composition-api";
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class Home extends Vue {}
+export default defineComponent({
+    components: {
+        
+    },
+    setup: () => {
+
+        const count: Ref<number> = ref(0);
+
+        const countAdd = () => {
+            count.value ++
+        }
+
+        return {
+            count,
+            countAdd
+        }
+    },
+});
 </script>
